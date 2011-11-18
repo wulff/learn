@@ -1,0 +1,173 @@
+/* This file will hold the main styles for your website. */
+
+/* fonts */
+
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url('../../../../fonts/League_Gothic/League_Gothic-webfont.eot');
+  src: url('../../../../fonts/League_Gothic/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../../../fonts/League_Gothic/League_Gothic-webfont.woff') format('woff'),
+       url('../../../../fonts/League_Gothic/League_Gothic-webfont.ttf') format('truetype'),
+       url('../../../../fonts/League_Gothic/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* basic elements */
+
+a,
+a:link,
+a:visited {
+  padding-bottom: 1px;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+h1, h2 {
+  font-family: 'LeagueGothicRegular',Verdana,Helvetica,Arial,sans-serif;
+}
+h1 {
+  margin: 20px 0 17px;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+h2.block-title, h3, h4, h5, h6 {
+  font-family: Helvetica,Verdana,Arial,sans-serif;
+}
+
+.item-list ul li {
+  margin: 0 1.5em .25em 0;
+}
+ul.inline li {
+  padding: 0 1em 0 0;
+}
+
+/* forms */
+
+input.form-text {
+  width: 100%;
+}
+.form-actions {
+  margin-bottom: 0;
+}
+.form-item:first-child {
+  margin-top: 0;
+}
+
+/* --- section-header ------------------------------------------------------- */
+
+#zone-user-wrapper {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+#zone-branding-wrapper {
+  background-color: #ff7200;
+  color: #fff;
+}
+#zone-branding-wrapper a {
+  color: #fff;
+  border-bottom: none;
+}
+#zone-branding-wrapper h2 {
+  letter-spacing: +0em;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+/* blocks */
+
+.block.block-user-menu {
+  margin: 0 0 4px 0;
+}
+.block.block-user-menu ul {
+  float: right;
+}
+.block.block-user-menu li {
+  display: inline;
+  padding: 0;
+  margin-left: .5em;
+}
+.block.block-user-menu a {
+  color: #fff;
+}
+.block.block-user-menu a:hover {
+  color: #ff7200;
+  border-bottom: 1px solid #ff7200;
+}
+.admin-menu .block-user-menu {
+  display: none;
+}
+
+/* --- section-content ------------------------------------------------------ */
+
+ul.menu li {
+  margin-left: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+ul.menu li  li {
+  margin-left: 1em;
+}
+
+/* blocks */
+
+.block {
+  margin-bottom: 20px;
+}
+.block-search {
+  padding: .75em .75em;
+  background-color: #2a2a2a;
+}
+
+/* book navigation */
+
+.book-navigation ul.menu {
+  padding: .75em 1em 1em 1em;
+  border-top: none;
+  background-color: #eaeaea;
+}
+.book-navigation ul.menu a {
+  color: #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+}
+.book-navigation ul.menu a:hover {
+  color: #ff7200;
+  border-bottom: 1px solid #ff7200;
+}
+
+.book-navigation .page-links {
+  border: none;
+  background-color: #6a6a6a;
+  padding: .25em 1em;
+}
+.book-navigation .page-links a {
+  color: #fff;
+  border-bottom: none;
+}
+.book-navigation .page-links a:hover {
+  color: #ff7200;
+}
+
+/* search */
+/*
+.form-item-search-block-form input.form-text {
+  width: 70%;
+}
+.form-item-search-block-form input.form-submit {
+  width: 20%;
+}
+.block-search
+*/
+
+#search-block-form input.form-text {
+  width: 75%;
+}
+#search-block-form input.form-submit {
+  float: right;
+  margin-right: 0;
+  width: 20%;
+}

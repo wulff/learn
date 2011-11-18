@@ -1,0 +1,62 @@
+name = Lær Drupal
+description = Install and configure the companion site for Lær Drupal.
+version = 1.x-dev
+core = 7.x
+
+; core modules
+
+dependencies[] = block
+dependencies[] = book
+dependencies[] = comment
+dependencies[] = contact
+dependencies[] = contextual
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; contrib modules
+
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = features
+dependencies[] = globalredirect
+dependencies[] = l10n_update
+dependencies[] = media
+dependencies[] = menu_block
+dependencies[] = pathauto
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = transliteration
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = workbench
+dependencies[] = workbench_files
+dependencies[] = workbench_media
+dependencies[] = wysiwyg
+
+; custom modules
+
+dependencies[] = learn_utility
+
+; features
+
+learn_features[] = learn_page
+learn_features[] = learn_book
+learn_features[] = learn_web
+
+; files
+
+files[] = farouteffects.profile

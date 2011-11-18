@@ -1,0 +1,4 @@
+name = Utility
+description = Utility functions for lærdrupal.dk.
+core = 7.x
+package = Learn

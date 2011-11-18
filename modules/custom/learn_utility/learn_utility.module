@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Utility functions for lærdrupal.dk.
+ */
+
+/* --- HOOKS ---------------------------------------------------------------- */
+
+/**
+ * Implements hook_pathauto_alias_alter().
+ */
+function learn_utility_pathauto_alias_alter(&$alias, array &$context) {
+  // remove duplicate elements from the path
+  $temp_alias = explode('/', $alias);
+  $temp_alias = array_unique($temp_alias);
+  $alias = implode('/', $temp_alias);
+}
