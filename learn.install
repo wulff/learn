@@ -24,10 +24,18 @@ function learn_install() {
       'filter_html' => array(
         'weight' => 1,
         'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <p>',
+        ),
       ),
       // Line break filter.
       'filter_autop' => array(
         'weight' => 2,
+        'status' => 1,
+      ),
+      // Media filter.
+      'media_filter' => array(
+        'weight' => 3,
         'status' => 1,
       ),
       // HTML corrector filter.
@@ -62,7 +70,7 @@ function learn_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'sidebar_first',
-      'pages' => 'user/login',
+      'pages' => "search/*\nuser\nuser/*",
       'title' => 'Bøger',
       'cache' => 5,
     ),
@@ -74,7 +82,7 @@ function learn_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'sidebar_second',
-      'pages' => "search/*\nuser/login",
+      'pages' => "search/*\nuser\nuser/*",
       'title' => '',
       'cache' => -1,
     ),
@@ -96,7 +104,7 @@ function learn_install() {
       'status' => 1,
       'weight' => 1,
       'region' => 'sidebar_second',
-      'pages' => 'user/login',
+      'pages' => "user\nuser/*\nsearch/*",
       'title' => '',
       'cache' => -1,
     ),
@@ -200,7 +208,7 @@ function learn_install() {
     'pathauto_node_pattern' => 'indhold/[node:title]',
     'pathauto_user_pattern' => 'profil/[user:name]',
     'theme_default' => 'learn',
-    'user_register' => USER_REGISTER_ADMINISTRATORS_ONLY,
+    'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
   );
   foreach ($variables as $key => $variable) {
     variable_set($key, $variable);
