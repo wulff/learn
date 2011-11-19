@@ -52,6 +52,17 @@ function learn_install() {
   $admin_theme = 'seven';
   $values = array(
     array(
+      'module' => 'menu',
+      'delta' => 'menu-learn-user',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'user_first',
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ),
+    array(
       'module' => 'system',
       'delta' => 'user-menu',
       'theme' => $default_theme,
@@ -172,6 +183,10 @@ function learn_install() {
   }
   $query->execute();
 
+  db_insert('block_role')
+    ->fields(array('module' => 'menu', 'delta' => 'menu-learn-user', 'rid' => 1))
+    ->execute();
+
   // enable default permissions for system roles
   $filtered_html_permission = filter_permission_name($filtered_html_format);
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access site-wide contact form', 'search content', $filtered_html_permission));
@@ -205,7 +220,10 @@ function learn_install() {
     'node_admin_theme' => 1,
     'pathauto_ignore_words' => 'ad, af, alle, alt, anden, at, blev, blive, bliver, da, de, dem, den, denne, der, deres, det, dette, dig, din, disse, dog, du, efter, eller, en, end, er, et, for, fra, ham, han, hans, har, havde, have, hende, hendes, her, hos, hun, hvad, hvis, hvor, i, ikke, ind, jeg, jer, jo, kunne, man, mange, med, meget, men, mig, min, mine, mit, mod, ned, noget, nogle, nu, når, og, også, om, op, os, over, på, selv, sig, sin, sine, sit, skal, skulle, som, sådan, thi, til, ud, under, var, vi, vil, ville, vor, være, været',
     'pathauto_node_learn_book_page_pattern' => 'bog/[node:book:root:title]/[node:book:parent:title]/[node:title]',
-    'pathauto_node_pattern' => 'indhold/[node:title]',
+    'pathauto_node_pattern' => '[node:title]',
+    'pathauto_node_learn_book_pattern' => 'bog/[node:book:root]/[node:book:parent]/[node:title]',
+    'pathauto_node_learn_story_pattern' => 'nyhed/[current-date:custom:Y/m/d]/[node:title]',
+    'pathauto_node_learn_page_pattern' => '[node:title]',
     'pathauto_user_pattern' => 'profil/[user:name]',
     'theme_default' => 'learn',
     'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,

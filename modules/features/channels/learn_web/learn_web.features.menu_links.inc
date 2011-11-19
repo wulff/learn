@@ -10,6 +10,42 @@
 function learn_web_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: menu-learn-user:user
+  $menu_links['menu-learn-user:user'] = array(
+    'menu_name' => 'menu-learn-user',
+    'link_path' => 'user',
+    'router_path' => 'user',
+    'link_title' => 'Log ind',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
+  );
+  // Exported menu link: menu-learn-user:user/register
+  $menu_links['menu-learn-user:user/register'] = array(
+    'menu_name' => 'menu-learn-user',
+    'link_path' => 'user/register',
+    'router_path' => 'user/register',
+    'link_title' => 'Opret konto',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-49',
+  );
   // Exported menu link: user-menu:search
   $menu_links['user-menu:search'] = array(
     'menu_name' => 'user-menu',
@@ -30,6 +66,8 @@ function learn_web_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Log ind');
+  t('Opret konto');
   t('Søg');
 
 

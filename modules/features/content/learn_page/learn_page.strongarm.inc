@@ -88,6 +88,7 @@ function learn_page_strongarm() {
   $strongarm->name = 'node_options_learn_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_learn_page'] = $strongarm;
 
