@@ -10,6 +10,24 @@
 function learn_web_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu:contact
+  $menu_links['main-menu:contact'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
+    'link_title' => 'Kontakt',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '0',
+  );
   // Exported menu link: menu-learn-user:user
   $menu_links['menu-learn-user:user'] = array(
     'menu_name' => 'menu-learn-user',
@@ -66,6 +84,7 @@ function learn_web_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Kontakt');
   t('Log ind');
   t('Opret konto');
   t('Søg');

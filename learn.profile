@@ -35,7 +35,7 @@ function learn_form_install_configure_form_alter(&$form, $form_state) {
 function learn_install_tasks() {
   return array(
     'learn_install_features' => array(
-      'display_name' => st('Install features'),
+      'display_name' => st('Features'),
       'type' => 'batch',
     ),
   );

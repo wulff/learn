@@ -30,7 +30,7 @@ function learn_image_style($variables) {
   $variables['path'] = image_style_url($variables['style_name'], $variables['path']);
   $image = theme('image', $variables);
 
-  if ('large' == $variables['style_name']) {
+  if ('learn_large' == $variables['style_name']) {
     $url = file_create_url($original_path);
     return l($image, $url, array('html' => TRUE, 'attributes' => array('class' => 'fancybox')));
   }

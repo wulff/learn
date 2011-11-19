@@ -9,8 +9,7 @@ Drupal.behaviors.learnFancyBox = {
         $('a.fancybox').fancybox({
           'padding'      : 0,
           'transitionIn' : 'none',
-          'transitionOut': 'none',
-          'overlayShow'  : false
+          'transitionOut': 'none'
         });
 
         $('a.fancybox').each(function () {
