@@ -105,6 +105,10 @@ input.form-text {
   border-bottom: 1px solid #ff7200;
 }
 
+body.admin-menu #zone-user-wrapper {
+  display: none;
+}
+
 #zone-branding-wrapper {
   background-color: #ff7200;
   color: #fff;
@@ -188,6 +192,9 @@ ul.menu li  li {
 
 /* content */
 
+#region-content p.fancybox {
+  margin-bottom: 0;
+}
 #region-content p img {
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
