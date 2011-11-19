@@ -23,6 +23,7 @@ dependencies[] = search
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
+dependencies[] = translation
 
 ; contrib modules
 

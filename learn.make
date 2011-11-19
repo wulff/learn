@@ -87,6 +87,10 @@ projects[omega][version] = 3.0
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.2/ckeditor_3.6.2.tar.gz
 
+libraries[fancybox][download][type] = get
+libraries[fancybox][download][url] = http://fancybox.googlecode.com/files/jquery.fancybox-1.3.4.zip
+libraries[fancybox][destination] = themes/custom/learn/libraries
+
 ; fonts
 
 libraries[League-Gothic][download][type] = get
