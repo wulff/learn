@@ -44,7 +44,13 @@ h1 {
   line-height: 1;
   letter-spacing: -0.01em;
 }
-h2.block-title, h3, h4, h5, h6 {
+h2.block-title {
+  font-size: 32px;
+  letter-spacing: +0.01em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+h3, h4, h5, h6 {
   font-family: Helvetica,Verdana,Arial,sans-serif;
 }
 
@@ -53,6 +59,23 @@ h2.block-title, h3, h4, h5, h6 {
 }
 ul.inline li {
   padding: 0 1em 0 0;
+}
+
+table {
+  width: 100%;
+}
+tr.even, tr.odd {
+  background-color: transparent;
+}
+tr:last-child {
+  border: none;
+}
+td {
+  padding: .25em 0 .75em 0;
+}
+td.edit,
+td.delete {
+  text-align: right;
 }
 
 /* forms */
@@ -68,6 +91,8 @@ input.form-text {
 }
 
 /* --- section-header ------------------------------------------------------- */
+
+/* user menus */
 
 #zone-user-wrapper {
   background-color: #2a2a2a;
@@ -109,6 +134,8 @@ body.admin-menu #zone-user-wrapper {
   display: none;
 }
 
+/* branding */
+
 #zone-branding-wrapper {
   background-color: #ff7200;
   color: #fff;
@@ -125,10 +152,30 @@ body.admin-menu #zone-user-wrapper {
   margin-bottom: 7px;
 }
 
+/* main menu */
+
+#zone-menu-wrapper {
+  background-color: #2a2a2a;
+}
+#zone-menu-wrapper #zone-menu ul.inline {
+  display: block;
+  margin: 0;
+  padding: .4em 0 .4em 0;
+  font-size: 120%;
+}
+#zone-menu-wrapper #zone-menu li a {
+  border: none;
+  color: #fff;
+}
+
 /* --- section-content ------------------------------------------------------ */
 
 #zone-content h1 {
   margin-top: 0;
+}
+
+.breadcrumb {
+  padding: .25em 0 1em 0;
 }
 
 ul.menu li {
@@ -138,6 +185,36 @@ ul.menu li {
 }
 ul.menu li  li {
   margin-left: 1em;
+}
+
+/* tabs */
+
+ul.primary {
+  border: none;
+  margin: 0 0 .5em 0;
+  padding: 0;
+}
+ul.primary li {
+  padding: 0;
+  margin: 0 .5em 1em 0;
+  float: left;
+}
+ul.primary li a {
+  padding: .2em 1em .35em 1em;
+  margin-right: 0;
+  background-color: #6a6a6a;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+ul.primary li a.active {
+  border: none;
+  background-color: #ff7200;
+}
+ul.primary li a:hover {
+  background-color: #2a2a2a;
 }
 
 /* blocks */

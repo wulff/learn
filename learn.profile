@@ -11,7 +11,7 @@
  */
 function learn_form_install_configure_form_alter(&$form, $form_state) {
   // basic site information
-  $form['site_information']['site_name']['#default_value'] = 'LÆR DRUPAL';
+  $form['site_information']['site_name']['#default_value'] = 'Lær Drupal';
   $form['site_information']['site_mail']['#default_value'] = 'wulff+learndrupal@ratatosk.net';
 
   // set the admin username and password to make reinstalls less painful

@@ -12,7 +12,7 @@
  */
 
 /**
- * Overrides theme_image_style().
+ * Override theme_image_style().
  */
 function learn_image_style($variables) {
   // Determine the dimensions of the styled image.
