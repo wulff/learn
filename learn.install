@@ -96,6 +96,17 @@ function learn_install() {
       'title' => '',
       'cache' => -1,
     ),
+    array(
+      'module' => 'node',
+      'delta' => 'syndicate',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 2,
+      'region' => 'sidebar_first',
+      'pages' => "contact\nsearch/*\nuser\nuser/*",
+      'title' => '',
+      'cache' => -1,
+    ),
 
     array(
       'module' => 'search',

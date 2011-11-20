@@ -36,6 +36,10 @@ a#fancybox-close {
   border: none;
 }
 
+div.feed-icon {
+  margin-bottom: 20px;
+}
+
 h1, h2 {
   font-family: 'LeagueGothicRegular',Verdana,Helvetica,Arial,sans-serif;
 }
@@ -201,6 +205,9 @@ ul.menu li {
 }
 ul.menu li li {
   margin-left: 1em;
+}
+ul.language-switcher-locale-url {
+  margin-bottom: 0;
 }
 
 footer.submitted {
