@@ -82,8 +82,19 @@ function learn_install() {
       'weight' => 0,
       'region' => 'sidebar_first',
       'pages' => "contact\nsearch/*\nuser\nuser/*",
-      'title' => 'Bøger',
+      'title' => '',
       'cache' => 5,
+    ),
+    array(
+      'module' => 'locale',
+      'delta' => 'language',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 1,
+      'region' => 'sidebar_first',
+      'pages' => "contact\nsearch/*\nuser\nuser/*",
+      'title' => '',
+      'cache' => -1,
     ),
 
     array(
@@ -220,10 +231,11 @@ function learn_install() {
     'node_admin_theme' => 1,
     'pathauto_ignore_words' => 'ad, af, alle, alt, anden, at, blev, blive, bliver, da, de, dem, den, denne, der, deres, det, dette, dig, din, disse, dog, du, efter, eller, en, end, er, et, for, fra, ham, han, hans, har, havde, have, hende, hendes, her, hos, hun, hvad, hvis, hvor, i, ikke, ind, jeg, jer, jo, kunne, man, mange, med, meget, men, mig, min, mine, mit, mod, ned, noget, nogle, nu, når, og, også, om, op, os, over, på, selv, sig, sin, sine, sit, skal, skulle, som, sådan, thi, til, ud, under, var, vi, vil, ville, vor, være, været',
     'pathauto_node_learn_book_page_pattern' => 'bog/[node:book:root:title]/[node:book:parent:title]/[node:title]',
-    'pathauto_node_pattern' => '[node:title]',
-    'pathauto_node_learn_book_pattern' => 'bog/[node:book:root]/[node:book:parent]/[node:title]',
-    'pathauto_node_learn_story_pattern' => 'nyhed/[current-date:custom:Y/m/d]/[node:title]',
-    'pathauto_node_learn_page_pattern' => '[node:title]',
+    'pathauto_node_pattern' => '[node:title]/[node:language]',
+    'pathauto_node_learn_book_pattern' => 'book/[node:book:root]/[node:book:parent]/[node:title]/[node:language]',
+    'pathauto_node_learn_story_pattern' => 'news/[current-date:custom:Y]/[current-date:custom:m]/[current-date:custom:d]/[node:title]/[node:language]',
+    'pathauto_node_learn_page_pattern' => '[node:title]/[node:language]',
+    'pathauto_transliterate' => 1,
     'pathauto_user_pattern' => 'profil/[user:name]',
     'theme_default' => 'learn',
     'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
@@ -264,6 +276,14 @@ function learn_install() {
     ))
     ->condition('cid', 1, '=')
     ->execute();
+
+  // fix language prefixes
+  db_update('languages')->fields(array('prefix' => ''))->condition('language', 'da', '=')->execute();
+  db_update('languages')->fields(array('prefix' => 'en'))->condition('language', 'en', '=')->execute();
+
+  // make main menu translatable
+  db_update('menu')->fields(array('i18n_mode' => 5))->condition('menu_name', 'main-menu', '=')->execute();
+  // TODO: update menu-learn-user as well
 
   // final cleanup
   node_types_rebuild();

@@ -20,6 +20,7 @@ function learn_web_menu_default_menu_links() {
       'attributes' => array(
         'title' => '',
       ),
+      'langcode' => 'da',
     ),
     'module' => 'menu',
     'hidden' => '0',

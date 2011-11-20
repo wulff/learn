@@ -29,8 +29,8 @@ projects[features][version] = 1.0-beta4
 projects[file_entity][subdir] = contrib
 projects[file_entity][version] = 2.x-dev
 
-projects[globalredirect][subdir] = contrib
-projects[globalredirect][version] = 1.3
+projects[i18n][subdir] = contrib
+projects[i18n][version] = 1.1
 
 projects[l10n_client][subdir] = contrib
 projects[l10n_client][version] = 1.0
@@ -61,6 +61,9 @@ projects[token][version] = 1.0-beta7
 
 projects[transliteration][subdir] = contrib
 projects[transliteration][version] = 3.0
+
+projects[variable][subdir] = contrib
+projects[variable][version] = 1.1
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.x-dev

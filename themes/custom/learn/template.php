@@ -12,6 +12,31 @@
  */
 
 /**
+ * Override theme_breadcrumb().
+ */
+/*
+function learn_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+dpm($breadcrumb);
+
+  $breadcrumb_full = t('You are here:') . ' ';
+  if (empty($breadcrumb)) {
+    $breadcrumb_full .= t('Home');
+  }
+  else {
+    $breadcrumb_full .= implode(' » ', $breadcrumb);
+  }
+
+  // Provide a navigational heading to give context for breadcrumb links to
+  // screen-reader users. Make the heading invisible with .element-invisible.
+  $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+
+  $output .= '<div class="breadcrumb">' . $breadcrumb_full . '</div>';
+  return $output;
+}
+*/
+
+/**
  * Override theme_image_style().
  */
 function learn_image_style($variables) {
