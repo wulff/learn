@@ -38,10 +38,20 @@ function learn_install_tasks() {
       'display_name' => st('Features'),
       'type' => 'batch',
     ),
+    'learn_install_language' => array(
+      'display_name' => st('Language'),
+      'type' => 'batch',
+    ),
   );
 }
 
 /* --- HOOKS ---------------------------------------------------------------- */
+
+function learn_install_language(&$install_state) {
+  // fix language prefixes
+  db_update('languages')->fields(array('prefix' => ''))->condition('language', 'da', '=')->execute();
+  db_update('languages')->fields(array('prefix' => 'en'))->condition('language', 'en', '=')->execute();
+}
 
 /**
  * Install features.

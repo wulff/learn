@@ -289,12 +289,14 @@ function learn_install() {
     ->condition('cid', 1, '=')
     ->execute();
 
-  // fix language prefixes
-  db_update('languages')->fields(array('prefix' => ''))->condition('language', 'da', '=')->execute();
-  db_update('languages')->fields(array('prefix' => 'en'))->condition('language', 'en', '=')->execute();
+  // add learn_large file display
+  db_insert('file_display')
+    ->fields(array('name', 'weight', 'status', 'settings'))
+    ->values(array('image__media_large__file_image', 5, 1, 'a:1:{s:11:"image_style";s:11:"learn_large";}'))
+    ->execute();
 
   // make main menu translatable
-  db_update('menu')->fields(array('i18n_mode' => 5))->condition('menu_name', 'main-menu', '=')->execute();
+  db_update('menu_custom')->fields(array('i18n_mode' => 5))->condition('menu_name', 'main-menu', '=')->execute();
   // TODO: update menu-learn-user as well
 
   // final cleanup

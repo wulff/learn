@@ -314,6 +314,9 @@ ul.primary li a:hover {
   width: 100%;
   height: auto;
 }
+#region-content p a.learn-narrow img {
+  width: auto;
+}
 
 /* --- section-footer ------------------------------------------------------- */
 

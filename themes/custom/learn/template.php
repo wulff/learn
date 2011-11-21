@@ -36,13 +36,17 @@ function learn_image_style($variables) {
   $variables['width'] = $dimensions['width'];
   $variables['height'] = $dimensions['height'];
 
+dpm($variables);
+
+  // TODO: set class depending on whether image is full width or not
   $original_path = $variables['path'];
   $variables['path'] = image_style_url($variables['style_name'], $variables['path']);
-  $image = theme('image', $variables);
+  $image = theme('image', $variables) ;
 
   if ('learn_large' == $variables['style_name']) {
     $url = file_create_url($original_path);
-    return l($image, $url, array('html' => TRUE, 'attributes' => array('class' => 'fancybox')));
+    $extra = $variables['width'] < 580 ? ' learn-narrow' : ' learn-full';
+    return l($image, $url, array('html' => TRUE, 'attributes' => array('class' => 'fancybox' . $extra)));
   }
   else {
     return $image;
@@ -57,7 +61,7 @@ function learn_system_powered_by() {
 
   $path = drupal_get_path('theme', 'learn') . '/images/cc-by-nc-sa.png';
   $image = theme('image', array('path' => $path, 'width' => 80, 'height' => 15, 'alt' => 'CC-BY-NC-SA'));
-  
+
   $output .= '<p>' . t('© 2011 <a href="@ratatosk">Ratatosk</a>. Powered by <a href="@poweredby">Drupal</a>. Drupal is a registered trademark of Dries Buytaert.', array('@ratatosk' => 'http://ratatosk.net', '@poweredby' => 'http://drupal.org')) . '</p>';
   $output .= '<p>' . $image . ' ' . t('This work is licensed under a <a href="@cc">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.', array('@cc' => 'http://creativecommons.org/licenses/by-nc-sa/3.0/')) . '</p>';
 
