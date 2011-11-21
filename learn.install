@@ -96,17 +96,6 @@ function learn_install() {
       'title' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'node',
-      'delta' => 'syndicate',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 2,
-      'region' => 'sidebar_first',
-      'pages' => "contact\nsearch/*\nuser\nuser/*",
-      'title' => '',
-      'cache' => -1,
-    ),
 
     array(
       'module' => 'search',
@@ -171,6 +160,18 @@ function learn_install() {
       'status' => 1,
       'weight' => 2,
       'region' => 'content',
+      'pages' => '',
+      'title' => '',
+      'cache' => -1,
+    ),
+
+    array(
+      'module' => 'system',
+      'delta' => 'powered-by',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'footer_second',
       'pages' => '',
       'title' => '',
       'cache' => -1,
