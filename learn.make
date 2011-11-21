@@ -99,4 +99,4 @@ libraries[fancybox][destination] = themes/custom/learn/libraries
 libraries[League-Gothic][download][type] = get
 libraries[League-Gothic][download][url] = http://www.fontsquirrel.com/fontfacekit/League-Gothic
 libraries[League-Gothic][directory_name] = League_Gothic
-libraries[League-Gothic][destination] = fonts
+libraries[League-Gothic][destination] = themes/custom/learn/fonts
