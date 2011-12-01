@@ -36,8 +36,6 @@ function learn_image_style($variables) {
   $variables['width'] = $dimensions['width'];
   $variables['height'] = $dimensions['height'];
 
-dpm($variables);
-
   // TODO: set class depending on whether image is full width or not
   $original_path = $variables['path'];
   $variables['path'] = image_style_url($variables['style_name'], $variables['path']);
@@ -45,7 +43,7 @@ dpm($variables);
 
   if ('learn_large' == $variables['style_name']) {
     $url = file_create_url($original_path);
-    $extra = $variables['width'] < 580 ? ' learn-narrow' : ' learn-full';
+    $extra = $variables['width'] < 435 ? ' learn-narrow' : ' learn-full';
     return l($image, $url, array('html' => TRUE, 'attributes' => array('class' => 'fancybox' . $extra)));
   }
   else {

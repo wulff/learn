@@ -71,6 +71,13 @@ h3, h4, h5, h6 {
   font-family: Helvetica,Verdana,Arial,sans-serif;
 }
 
+#section-content h1,
+#section-content h2,
+#section-content h3,
+#section-content h4 {
+  font-weight: normal;
+}
+
 .item-list ul li {
   margin: 0 1.5em .25em 0;
 }
@@ -321,7 +328,7 @@ ul.primary li a:hover {
 /* --- section-footer ------------------------------------------------------- */
 
 #section-footer {
-  background-color: #2a2a2a;
+  background-color: #111;
   padding: 20px 0 14px 0;
   color: #aaa;
 }
