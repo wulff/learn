@@ -11,7 +11,7 @@ else
   find . -name .DS_Store -print0 | xargs -0 rm
 
   # nuke existing modules, themes, and libraries
-  for directory in ./libraries ./modules/contrib ./themes/contrib .themes/custom/learn/fonts .themes/custom/learn/libraries
+  for directory in ./libraries ./modules/contrib ./themes/contrib ./themes/custom/learn/fonts ./themes/custom/learn/libraries
   do
     if [ -d $directory ]
     then
