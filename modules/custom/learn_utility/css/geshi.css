@@ -1,0 +1,24 @@
+.cke_skin_kama .cke_button_Geshi-code span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-php span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-ruby span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-mysql span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-html span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-css span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-apache span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-ini span.cke_icon,
+.cke_skin_kama .cke_button_Geshi-robots span.cke_icon {
+  display: none !important;
+}
+
+.cke_skin_kama .cke_button_Geshi-code span.cke_label,
+.cke_skin_kama .cke_button_Geshi-php span.cke_label,
+.cke_skin_kama .cke_button_Geshi-ruby span.cke_label,
+.cke_skin_kama .cke_button_Geshi-mysql span.cke_label,
+.cke_skin_kama .cke_button_Geshi-html span.cke_label,
+.cke_skin_kama .cke_button_Geshi-css span.cke_label,
+.cke_skin_kama .cke_button_Geshi-apache span.cke_label,
+.cke_skin_kama .cke_button_Geshi-ini span.cke_label,
+.cke_skin_kama .cke_button_Geshi-robots span.cke_label {
+  display: inline;
+  font-size: 90%;
+}

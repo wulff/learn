@@ -7,11 +7,41 @@
 /* --- HOOKS ---------------------------------------------------------------- */
 
 /**
- * Implements hook_pathauto_alias_alter().
+ * Implements hook_token().
  */
 function learn_utility_pathauto_alias_alter(&$alias, array &$context) {
   // remove duplicate elements from the path
-  $temp_alias = explode('/', $alias);
-  $temp_alias = array_unique($temp_alias);
-  $alias = implode('/', $temp_alias);
+#  $temp_alias = explode('/', $alias);
+#  $temp_alias = array_unique($temp_alias);
+#  $alias = implode('/', $temp_alias);
 }
+
+/**
+ * Implements hook_wysiwyg_plugin().
+ */
+// TODO: base this on the geshi filters enabled on the settings page
+function learn_utility_wysiwyg_plugin($editor, $version) {
+  // based on http://drupal.org/project/wysiwyg-geshi
+  if ('ckeditor' == $editor) {
+    drupal_add_css(drupal_get_path('module', 'learn_utility') .'/css/geshi.css');
+    return array(
+      'geshi' => array(
+        'path' => drupal_get_path('module', 'learn_utility') . '/js',
+        'filename' => 'geshi.js',
+        'buttons' => array(
+          'Geshi-code' => t('Geshi: Generic'),
+          'Geshi-php' => t('Geshi: PHP'),
+          'Geshi-ruby' => t('Geshi: Ruby'),
+          'Geshi-mysql' => t('Geshi: MySQL'),
+          'Geshi-html' => t('Geshi: HTML'),
+          'Geshi-css' => t('Geshi: CSS'),
+          'Geshi-apache' => t('Geshi: Apache'),
+          'Geshi-ini' => t('Geshi: INI'),
+          'Geshi-robots' => t('Geshi: Robots.txt'),
+        ),
+        'load' => TRUE,
+      ),
+    );
+  }
+}
+
