@@ -7,41 +7,98 @@
 /* --- HOOKS ---------------------------------------------------------------- */
 
 /**
- * Implements hook_token().
- */
-function learn_utility_pathauto_alias_alter(&$alias, array &$context) {
-  // remove duplicate elements from the path
-#  $temp_alias = explode('/', $alias);
-#  $temp_alias = array_unique($temp_alias);
-#  $alias = implode('/', $temp_alias);
-}
-
-/**
  * Implements hook_wysiwyg_plugin().
  */
-// TODO: base this on the geshi filters enabled on the settings page
 function learn_utility_wysiwyg_plugin($editor, $version) {
   // based on http://drupal.org/project/wysiwyg-geshi
   if ('ckeditor' == $editor) {
-    drupal_add_css(drupal_get_path('module', 'learn_utility') .'/css/geshi.css');
+    module_load_include('inc', 'geshifilter', 'geshifilter');
+    $languages = _geshifilter_get_available_languages();
+
+    $buttons = _learn_utility_get_buttons($languages);
+    $settings = _learn_utility_get_settings($languages);
+
+    $css = _learn_utility_get_css(array_keys($buttons));
+
+    drupal_add_css($css, 'inline');
+    drupal_add_js(array('learnGeshi' => $settings), 'setting');
+
     return array(
       'geshi' => array(
         'path' => drupal_get_path('module', 'learn_utility') . '/js',
         'filename' => 'geshi.js',
-        'buttons' => array(
-          'Geshi-code' => t('Geshi: Generic'),
-          'Geshi-php' => t('Geshi: PHP'),
-          'Geshi-ruby' => t('Geshi: Ruby'),
-          'Geshi-mysql' => t('Geshi: MySQL'),
-          'Geshi-html' => t('Geshi: HTML'),
-          'Geshi-css' => t('Geshi: CSS'),
-          'Geshi-apache' => t('Geshi: Apache'),
-          'Geshi-ini' => t('Geshi: INI'),
-          'Geshi-robots' => t('Geshi: Robots.txt'),
-        ),
+        'buttons' => $buttons,
         'load' => TRUE,
       ),
     );
   }
 }
 
+/* --- UTILITY -------------------------------------------------------------- */
+
+/**
+ * Returns wysiwyg buttons based on the enabled GeSHi filters.
+ */
+function _learn_utility_get_buttons($languages) {
+  // the generic code button is always available
+  $buttons = array(
+    'Geshi-code' => 'Geshi: Generic',
+  );
+
+  foreach ($languages as $index => $language) {
+    if (variable_get('geshifilter_language_enabled_' . $index, FALSE)) {
+      $buttons['Geshi-' . $index] = 'Geshi: ' . $language['fullname'];
+    }
+  }
+
+  return $buttons;
+}
+
+/**
+ * Returns wysiwyg settings based on the enabled GeSHi filters.
+ */
+function _learn_utility_get_settings($languages) {
+  // the setting for the generic code button is always available
+  $settings = array(
+    'Geshi-code' => array(
+      'label' => 'code',
+      'settings' => array(
+        'element' => 'pre',
+      ),
+    ),
+  );
+
+  foreach ($languages as $index => $language) {
+    if (variable_get('geshifilter_language_enabled_' . $index, FALSE)) {
+      $settings['Geshi-' . $index] = array(
+        'label' => $index,
+        'settings' => array(
+          'element' => 'pre',
+          'attributes' => array(
+            'language' => $index,
+          ),
+        ),
+      );
+    }
+  }
+
+  return $settings;
+}
+
+/**
+ * Returns wysiwyg css based on the enabled GeSHi filters.
+ */
+function _learn_utility_get_css($keys) {
+  $css = '';
+
+  $icons = $labels = array();
+  foreach ($keys as $key) {
+    $icons[] = '.cke_skin_kama .cke_button_' . $key . ' span.cke_icon';
+    $labels[] = '.cke_skin_kama .cke_button_' . $key . ' span.cke_label';
+  }
+
+  $css .= implode(', ', $icons) . '{display: none !important;}';
+  $css .= implode(', ', $labels) . '{display: inline; font-size: 90%;}';
+
+  return $css;
+}

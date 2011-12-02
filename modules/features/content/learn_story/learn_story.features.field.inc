@@ -10,8 +10,8 @@
 function learn_story_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-learn_story-body'
-  $fields['node-learn_story-body'] = array(
+  // Exported field: 'node-learn_story-field_learn_story_body'
+  $fields['node-learn_story-field_learn_story_body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -19,7 +19,7 @@ function learn_story_field_default_fields() {
       'entity_types' => array(
         0 => 'node',
       ),
-      'field_name' => 'body',
+      'field_name' => 'field_learn_story_body',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -62,7 +62,7 @@ function learn_story_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'body',
+      'field_name' => 'field_learn_story_body',
       'label' => 'Body',
       'required' => FALSE,
       'settings' => array(

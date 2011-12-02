@@ -13,9 +13,6 @@ projects[admin_menu][version] = 3.0-rc1
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.x-dev
 
-projects[codefilter][subdir] = contrib
-projects[codefilter][version] = 1.0
-
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.2
 
@@ -33,7 +30,7 @@ projects[file_entity][subdir] = contrib
 projects[file_entity][version] = 2.x-dev
 
 projects[geshifilter][subdir] = contrib
-projects[geshifilter][version] = 1.0
+projects[geshifilter][version] = 1.x-dev
 
 projects[i18n][subdir] = contrib
 projects[i18n][version] = 1.2
@@ -45,7 +42,7 @@ projects[l10n_update][subdir] = contrib
 projects[l10n_update][version] = 1.0-beta2
 
 projects[libraries][subdir] = contrib
-projects[libraries][version] = 1.0
+projects[libraries][version] = 2.x-dev
 
 projects[media][subdir] = contrib
 projects[media][version] = 2.x-dev
@@ -58,8 +55,6 @@ projects[menu_position][version] = 1.0
 
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.0
-; http://drupal.org/node/1046972
-projects[admin_menu][patch][] = http://drupal.org/files/1046972-joined_path_token-d7-1.patch
 
 projects[redirect][subdir] = contrib
 projects[redirect][version] = 1.0-beta3
