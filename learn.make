@@ -31,6 +31,7 @@ projects[file_entity][version] = 2.x-dev
 
 projects[geshifilter][subdir] = contrib
 projects[geshifilter][version] = 1.x-dev
+projects[geshifilter][patch][] = http://drupal.org/files/geshifilter-wysiwyg-bridge-1229894-4.patch
 
 projects[i18n][subdir] = contrib
 projects[i18n][version] = 1.2

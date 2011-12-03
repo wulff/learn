@@ -44,17 +44,6 @@ function learn_utility_tokens($type, $tokens, $data = array(), $options = array(
   return $replacements;
 }
 
-function _learn_utility_build_path($menu, $path = array()) {
-  $menu_item = $menu[key($menu)];
-
-  $path[] = $menu_item['link']['link_title'];
-  if (!empty($menu_item['below'])) {
-    $path = _learn_utility_build_path($menu_item['below'], $path);
-  }
-
-  return $path;
-}
-
 /**
  * Implements hook_wysiwyg_plugin().
  */
@@ -89,10 +78,7 @@ function learn_utility_wysiwyg_plugin($editor, $version) {
  * Returns wysiwyg buttons based on the enabled GeSHi filters.
  */
 function _learn_utility_get_buttons($languages) {
-  // the generic code button is always available
-  $buttons = array(
-    'Geshi-code' => 'Geshi: Generic',
-  );
+  $buttons = array();
 
   foreach ($languages as $index => $language) {
     if (variable_get('geshifilter_language_enabled_' . $index, FALSE)) {
@@ -107,15 +93,7 @@ function _learn_utility_get_buttons($languages) {
  * Returns wysiwyg settings based on the enabled GeSHi filters.
  */
 function _learn_utility_get_settings($languages) {
-  // the setting for the generic code button is always available
-  $settings = array(
-    'Geshi-code' => array(
-      'label' => 'code',
-      'settings' => array(
-        'element' => 'pre',
-      ),
-    ),
-  );
+  $settings = array();
 
   foreach ($languages as $index => $language) {
     if (variable_get('geshifilter_language_enabled_' . $index, FALSE)) {
@@ -147,7 +125,21 @@ function _learn_utility_get_css($keys) {
   }
 
   $css .= implode(', ', $icons) . '{display: none !important;}';
-  $css .= implode(', ', $labels) . '{display: inline; font-size: 90%;}';
+  $css .= implode(', ', $labels) . '{display: inline;}';
 
   return $css;
+}
+
+/**
+ * Create an array of menu link titles.
+ */
+function _learn_utility_build_path($menu, $path = array()) {
+  $menu_item = $menu[key($menu)];
+
+  $path[] = $menu_item['link']['link_title'];
+  if (!empty($menu_item['below'])) {
+    $path = _learn_utility_build_path($menu_item['below'], $path);
+  }
+
+  return $path;
 }
