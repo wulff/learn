@@ -364,6 +364,22 @@ function learn_install() {
   db_update('menu_custom')->fields(array('i18n_mode' => 5))->condition('menu_name', 'main-menu', '=')->execute();
   // TODO: update menu-learn-user as well
 
+  // apply extra settings for language fields
+  $bundle_settings = variable_get('field_bundle_settings');
+  foreach (array('learn_book', 'learn_page', 'learn_story') as $bundle) {
+    $bundle_settings['node'][$bundle]['extra_fields']['display']['language'] = array(
+      'default' => array(
+        'weight' => '0',
+        'visible' => false,
+      ),
+      'teaser' => array(
+        'weight' => '0',
+        'visible' => false,
+      ),
+    );
+  }
+  variable_set('field_bundle_settings', $bundle_settings);
+
   // final cleanup
   node_types_rebuild();
   menu_rebuild();
