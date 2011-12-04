@@ -209,9 +209,16 @@ body.admin-menu #zone-user-wrapper {
 #zone-content div.feed-icon {
   display: none;
 }
+#region-content article {
+  margin-bottom: 3em;
+}
 
 .breadcrumb {
   padding: .25em 0 1em 0;
+}
+
+.item-list ul.pager li {
+    margin: 0 .5em .25em 0;
 }
 
 ul.language-switcher-locale-url li,
