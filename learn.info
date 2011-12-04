@@ -44,6 +44,7 @@ dependencies[] = libraries
 dependencies[] = media
 dependencies[] = menu_block
 dependencies[] = pathauto
+dependencies[] = performance
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = transliteration

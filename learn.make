@@ -10,18 +10,20 @@ api = 2
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc1
 
+projects[cdn][subdir] = contrib
+projects[cdn][version] = 2.0-beta1
+
+projects[coder][subdir] = developer
+projects[coder][version] = 1.0
+
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.x-dev
 
-projects[devel][subdir] = contrib
+projects[devel][subdir] = developer
 projects[devel][version] = 1.2
 
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
-
-; TODO: remove?
-projects[entity][subdir] = contrib
-projects[entity][version] = 1.0-rc1
 
 projects[features][subdir] = contrib
 projects[features][version] = 1.0-beta4
@@ -51,14 +53,11 @@ projects[media][version] = 2.x-dev
 projects[menu_block][subdir] = contrib
 projects[menu_block][version] = 2.x-dev
 
-projects[menu_position][subdir] = contrib
-projects[menu_position][version] = 1.0
-
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.0
 
-projects[redirect][subdir] = contrib
-projects[redirect][version] = 1.0-beta3
+projects[performance][subdir] = developer
+projects[performance][version] = 1.3
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta4
