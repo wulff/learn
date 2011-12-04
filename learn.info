@@ -29,6 +29,7 @@ dependencies[] = translation
 
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
+dependencies[] = cdn
 dependencies[] = ctools
 dependencies[] = devel
 dependencies[] = diff
