@@ -12,15 +12,11 @@ projects[admin_menu][version] = 3.0-rc1
 
 projects[cdn][subdir] = contrib
 projects[cdn][version] = 2.0-beta1
-
-projects[coder][subdir] = developer
-projects[coder][version] = 1.0
+; http://drupal.org/node/1025762#comment-5286654
+projects[cdn][patch][] = http://drupal.org/files/use_scheme_correctly.patch
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.x-dev
-
-projects[devel][subdir] = developer
-projects[devel][version] = 1.2
 
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
@@ -56,9 +52,6 @@ projects[menu_block][version] = 2.x-dev
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.0
 
-projects[performance][subdir] = developer
-projects[performance][version] = 1.3
-
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta4
 
@@ -81,10 +74,24 @@ projects[workbench_files][subdir] = contrib
 projects[workbench_files][version] = 1.0
 
 projects[workbench_media][subdir] = contrib
-projects[workbench_media][version] = 1.0
+projects[workbench_media][version] = 1.x-dev
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.1
+
+; developer modules
+
+projects[coder][subdir] = developer
+projects[coder][version] = 1.0
+
+projects[devel][subdir] = developer
+projects[devel][version] = 1.2
+
+projects[performance][subdir] = developer
+projects[performance][version] = 1.3
+
+projects[security_review][subdir] = developer
+projects[security_review][version] = 1.0
 
 ; themes
 

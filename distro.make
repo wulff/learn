@@ -6,6 +6,6 @@ core = 7.x
 projects[drupal][type] = core
 projects[drupal][version] = 7
 
-projects[farouteffects][type] = profile
-projects[farouteffects][download][type] = git
-projects[farouteffects][download][url] = git@github.com:wulff/learn.git
+projects[learn][type] = profile
+projects[learn][download][type] = git
+projects[learn][download][url] = git://github.com/wulff/learn.git

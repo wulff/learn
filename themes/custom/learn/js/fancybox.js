@@ -19,6 +19,7 @@ Drupal.behaviors.learnFancyBox = {
       else {
         $('a.fancybox').each(function () {
           $(this).parent().removeClass('fancybox');
+          $(this).unbind('click');
         });
       }
     });
