@@ -159,8 +159,8 @@ input.form-text {
   color: #fff;
 }
 #zone-user-wrapper .block a:hover {
-  color: #ff7200;
-  border-bottom: 1px solid #ff7200;
+  color: #8c4523;
+  border-bottom: 1px solid #8c4523;
 }
 
 body.admin-menu #zone-user-wrapper {
@@ -170,7 +170,7 @@ body.admin-menu #zone-user-wrapper {
 /* branding */
 
 #zone-branding-wrapper {
-  background-color: #ff7200;
+  background-color: #8c4523;
   color: #fff;
 }
 #zone-branding-wrapper a {
@@ -188,7 +188,7 @@ body.admin-menu #zone-user-wrapper {
 /* main menu */
 
 #zone-menu-wrapper {
-  background-color: #2a2a2a;
+  background-color: #000;
 }
 #zone-menu-wrapper #zone-menu ul.inline {
   display: block;
@@ -263,7 +263,7 @@ ul.primary li a {
 }
 ul.primary li a.active {
   border: none;
-  background-color: #ff7200;
+  background-color: #8c4523;
 }
 ul.primary li a:hover {
   background-color: #2a2a2a;
@@ -291,8 +291,8 @@ ul.primary li a:hover {
   border-bottom: 1px solid #f9f9f9;
 }
 .book-navigation ul.menu a:hover {
-  color: #ff7200;
-  border-bottom: 1px solid #ff7200;
+  color: #8c4523;
+  border-bottom: 1px solid #8c4523;
 }
 
 .book-navigation .page-links {
@@ -305,7 +305,7 @@ ul.primary li a:hover {
   border-bottom: none;
 }
 .book-navigation .page-links a:hover {
-  color: #ff7200;
+  color: #8c4523;
 }
 
 /* login */
@@ -325,7 +325,7 @@ ul.primary li a:hover {
   font-weight: normal;
 }
 .block-login .form-required {
-  color: #ff7200;
+  color: #8c4523;
 }
 
 /* search */
@@ -372,7 +372,7 @@ p.screenshot {
 /* --- section-footer ------------------------------------------------------- */
 
 #section-footer {
-  background-color: #111;
+  background-color: #2a2a2a;
   padding: 20px 0 14px 0;
   color: #aaa;
 }

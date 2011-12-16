@@ -28,7 +28,6 @@ dependencies[] = translation
 ; contrib modules
 
 dependencies[] = admin_menu
-dependencies[] = cdn
 dependencies[] = ctools
 dependencies[] = devel
 dependencies[] = diff

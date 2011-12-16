@@ -21,6 +21,9 @@ projects[ctools][version] = 1.x-dev
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
 
+projects[entitycache][subdir] = contrib
+projects[entitycache][version] = 1.1
+
 projects[features][subdir] = contrib
 projects[features][version] = 1.0-beta4
 
@@ -45,6 +48,9 @@ projects[libraries][version] = 2.x-dev
 
 projects[media][subdir] = contrib
 projects[media][version] = 2.x-dev
+
+projects[memcache][subdir] = contrib
+projects[memcache][version] = 0.2
 
 projects[menu_block][subdir] = contrib
 projects[menu_block][version] = 2.x-dev
