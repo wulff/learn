@@ -1,1 +1,16 @@
 /* This file will hold styles that are loaded using the same media query as the narrow grid. */
+
+/* --- #section-header ------------------------------------------------------ */
+
+/* --- #zone-user --- */
+
+#zone-user-wrapper { display: none; }
+
+/* --- #zone-branding --- */
+
+#zone-branding-wrapper div.logo-img { display: block; float: right; margin: 24px 0 0 0; }
+
+/* --- #zone-menu --- */
+
+#zone-menu-wrapper { background-color: #8c4523; }
+#zone-menu { padding-top: 3px; }
