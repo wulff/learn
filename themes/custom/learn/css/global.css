@@ -185,6 +185,10 @@ body.admin-menu #zone-user-wrapper {
   margin-bottom: 7px;
 }
 
+#zone-branding-wrapper div.logo-img {
+  display: none;
+}
+
 /* main menu */
 
 #zone-menu-wrapper {

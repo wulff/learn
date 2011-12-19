@@ -3,3 +3,9 @@
 #zone-user-wrapper {
   display: none;
 }
+
+#zone-branding-wrapper div.logo-img {
+  display: block;
+  float: right;
+  margin: 24px 0 0 0;
+}
