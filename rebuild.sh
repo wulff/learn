@@ -23,3 +23,12 @@ else
   echo "Updating contrib modules and themes..."
   drush -y make --working-copy --no-core --contrib-destination=. $makefile
 fi
+
+makefile=`find . -name puppet.make`
+if [[ -z $makefile || ! -f $makefile ]]
+then
+  echo "Unable to locate puppet makefile.";
+else
+  echo "Adding puppet geshi filter..."
+  drush -y make --working-copy --no-core --contrib-destination=. $makefile
+fi
